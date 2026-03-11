@@ -1,7 +1,4 @@
-/**
- * Class abstrak Product sebagai superclass untuk semua produk di Filkom Mart.
- * Menerapkan enkapsulasi dengan private fields dan getter/setter.
- */
+
 public abstract class Product {
 
     // === ATRIBUT (private untuk enkapsulasi) ===
@@ -22,7 +19,7 @@ public abstract class Product {
         this.stockQuantity = 0;
     }
 
-    /** Konstruktor parameterized */
+    
     public Product(String productId, String name, double price, int stockQuantity) {
         this.productId = productId;
         this.name = name;
@@ -30,23 +27,7 @@ public abstract class Product {
         this.stockQuantity = stockQuantity;
     }
 
-    // =============================================
-    // METHOD ABSTRAK
-    // =============================================
-
-    /**
-     * Method abstrak — wajib di-override oleh setiap subclass.
-     * Menghitung besaran diskon (dalam Rupiah) untuk produk.
-     */
     public abstract double calculateDiscount();
-
-    // =============================================
-    // METHOD KONKRET
-    // =============================================
-
-    /**
-     * Menampilkan informasi dasar produk.
-     */
     public void getProductInfo() {
         System.out.println("  ID        : " + productId);
         System.out.println("  Nama      : " + name);
@@ -56,24 +37,11 @@ public abstract class Product {
         System.out.printf ("  Harga Net : Rp %.2f%n", price - calculateDiscount());
     }
 
-    // =============================================
-    // METHOD OVERLOADING — updateStock
-    // =============================================
-
-    /**
-     * Overload 1: Perbarui stok tanpa alasan.
-     * @param quantity jumlah perubahan stok (positif = tambah, negatif = kurang)
-     */
     public void updateStock(int quantity) {
         this.stockQuantity += quantity;
         System.out.println("  [Stock Update] " + name + " → stok baru: " + this.stockQuantity);
     }
 
-    /**
-     * Overload 2: Perbarui stok dengan keterangan alasan.
-     * @param quantity jumlah perubahan stok
-     * @param reason   alasan perubahan stok
-     */
     public void updateStock(int quantity, String reason) {
         this.stockQuantity += quantity;
         System.out.println("  [Stock Update] " + name
@@ -101,4 +69,5 @@ public abstract class Product {
     public String toString() {
         return String.format("[%s] %s - Rp %.2f (Stok: %d)", productId, name, price, stockQuantity);
     }
+
 }
