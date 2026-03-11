@@ -1,10 +1,5 @@
 import java.util.ArrayList;
 
-/**
- * Class Transaction — mengelola satu sesi transaksi penjualan.
- * Menggunakan ArrayList<Product> (sesuai hint soal) untuk fleksibilitas.
- * Mendukung method overloading addItem.
- */
 public class Transaction {
 
     // ==================== ATTRIBUTES ====================
@@ -19,24 +14,12 @@ public class Transaction {
         this.items = new ArrayList<>();
         this.totalItems = 0;
     }
-
-    // ==================== METHODS ====================
-
-    /**
-     * Method Overloading addItem — menambahkan 1 item ke transaksi.
-     * @param item produk yang ditambahkan
-     */
     public void addItem(Product item) {
         items.add(item);
         totalItems++;
         System.out.println("[+] Ditambahkan: " + item.getName() + " (qty: 1)");
     }
-
-    /**
-     * Method Overloading addItem — menambahkan item sebanyak quantity ke transaksi.
-     * @param item     produk yang ditambahkan
-     * @param quantity jumlah unit yang dibeli
-     */
+    
     public void addItem(Product item, int quantity) {
         for (int i = 0; i < quantity; i++) {
             items.add(item);
@@ -45,11 +28,6 @@ public class Transaction {
         System.out.println("[+] Ditambahkan: " + item.getName() + " (qty: " + quantity + ")");
     }
 
-    /**
-     * Menghitung total harga seluruh item setelah diskon.
-     * Menggunakan polymorphism: setiap item memanggil calculateDiscount() miliknya sendiri.
-     * @return total harga transaksi setelah diskon
-     */
     public double processSale() {
         double total = 0.0;
         System.out.println("\n========== PROSES TRANSAKSI: " + transactionId + " ==========");
@@ -65,9 +43,6 @@ public class Transaction {
         return total;
     }
 
-    /**
-     * Menampilkan ringkasan laporan transaksi.
-     */
     public void printReport() {
         System.out.println("\n---------- LAPORAN TRANSAKSI " + transactionId + " ----------");
         System.out.println("Total Item    : " + totalItems + " unit");
@@ -79,4 +54,5 @@ public class Transaction {
     public String              getTransactionId()   { return transactionId; }
     public ArrayList<Product>  getItems()           { return items; }
     public int                 getTotalItems()       { return totalItems; }
+
 }
