@@ -1,8 +1,4 @@
-/**
- * Subclass ElectronicProduct — mewarisi dari Product.
- * Mewakili produk elektronik di Filkom Mart.
- * Override calculateDiscount(): 5% + bonus 2% jika harga > 500.000.
- */
+
 public class ElectronicProduct extends Product {
 
     // ==================== ATTRIBUTES ====================
@@ -10,7 +6,6 @@ public class ElectronicProduct extends Product {
 
     // ==================== CONSTRUCTORS ====================
 
-    /** Constructor parameterized */
     public ElectronicProduct(String productId, String name, double price, int stockQuantity, String warrantyPeriod) {
         super(productId, name, price, stockQuantity);
         this.warrantyPeriod = warrantyPeriod;
@@ -32,9 +27,6 @@ public class ElectronicProduct extends Product {
         return discount;
     }
 
-    /**
-     * Override getProductInfo() untuk menambahkan informasi garansi.
-     */
     @Override
     public void getProductInfo() {
         super.getProductInfo();
@@ -46,4 +38,5 @@ public class ElectronicProduct extends Product {
 
     public String getWarrantyPeriod()                  { return warrantyPeriod; }
     public void   setWarrantyPeriod(String warranty)   { this.warrantyPeriod = warranty; }
+
 }
