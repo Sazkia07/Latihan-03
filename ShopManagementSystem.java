@@ -51,8 +51,8 @@ public class ShopManagementSystem {
         System.out.println("║             UPDATE STOK PRODUK                   ║");
         System.out.println("╚══════════════════════════════════════════════════╝");
 
-        f1.updateStock(5);                          // overload tanpa alasan
-        f2.updateStock(-2, "Terjual ke pelanggan"); // overload dengan alasan
+        f1.updateStock(5);                          
+        f2.updateStock(-2, "Terjual ke pelanggan"); 
         e1.updateStock(10, "Restock dari supplier");
         c1.updateStock(-5, "Penjualan minggu ini");
 
@@ -94,11 +94,9 @@ public class ShopManagementSystem {
         System.out.printf("Total Transaksi 2 (TRX-002)  : Rp %.2f%n", totalTrx2);
         System.out.printf("TOTAL PENJUALAN KESELURUHAN  : Rp %.2f%n", totalPenjualan);
 
-        // Produk terlaris (berdasarkan jumlah item terjual)
         System.out.println("\n--- Ringkasan Item Terjual ---");
         hitungProdukTerlaris(trx1, trx2);
 
-        // Tampilkan stok akhir semua produk
         System.out.println("\n--- Stok Akhir Produk ---");
         for (Product p : products) {
             System.out.printf("%-25s | Stok: %d unit%n", p.getName(), p.getStockQuantity());
@@ -106,10 +104,6 @@ public class ShopManagementSystem {
         System.out.println("==================================================");
     }
 
-    /**
-     * Menghitung dan menampilkan produk terlaris dari semua transaksi.
-     * Menggunakan polymorphism melalui ArrayList<Product>.
-     */
     private static void hitungProdukTerlaris(Transaction... transactions) {
         // Gabungkan semua item dari semua transaksi
         ArrayList<String> semuaNama = new ArrayList<>();
@@ -140,4 +134,5 @@ public class ShopManagementSystem {
         }
         System.out.println("\n🏆 Produk Terlaris: " + produkTerlaris + " (" + maxJumlah + " unit)");
     }
+
 }
