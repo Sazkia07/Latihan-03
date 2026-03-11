@@ -1,8 +1,4 @@
-/**
- * Subclass FoodProduct — mewarisi dari Product.
- * Mewakili produk makanan/minuman di Filkom Mart.
- * Override calculateDiscount(): diskon 10% jika stok > 10.
- */
+
 public class FoodProduct extends Product {
 
     // ==================== ATTRIBUTES ====================
@@ -10,7 +6,6 @@ public class FoodProduct extends Product {
 
     // ==================== CONSTRUCTORS ====================
 
-    /** Constructor parameterized */
     public FoodProduct(String productId, String name, double price, int stockQuantity, String expiryDate) {
         super(productId, name, price, stockQuantity);
         this.expiryDate = expiryDate;
@@ -30,9 +25,6 @@ public class FoodProduct extends Product {
         return 0.0;
     }
 
-    /**
-     * Override getProductInfo() untuk menambahkan informasi kadaluarsa.
-     */
     @Override
     public void getProductInfo() {
         super.getProductInfo();
@@ -44,4 +36,5 @@ public class FoodProduct extends Product {
 
     public String getExpiryDate()               { return expiryDate; }
     public void   setExpiryDate(String expiry)  { this.expiryDate = expiry; }
+
 }
