@@ -1,8 +1,4 @@
-/**
- * Subclass ClothingProduct — mewarisi dari Product.
- * Mewakili produk pakaian di Filkom Mart.
- * Override calculateDiscount(): diskon 15% untuk ukuran L atau XL.
- */
+
 public class ClothingProduct extends Product {
 
     // ==================== ATTRIBUTES ====================
@@ -11,7 +7,6 @@ public class ClothingProduct extends Product {
 
     // ==================== CONSTRUCTORS ====================
 
-    /** Constructor parameterized */
     public ClothingProduct(String productId, String name, double price, int stockQuantity, String size, String brand) {
         super(productId, name, price, stockQuantity);
         this.size = size;
@@ -32,9 +27,6 @@ public class ClothingProduct extends Product {
         return 0.0;
     }
 
-    /**
-     * Override getProductInfo() untuk menambahkan informasi ukuran dan merek.
-     */
     @Override
     public void getProductInfo() {
         super.getProductInfo();
@@ -50,4 +42,5 @@ public class ClothingProduct extends Product {
 
     public String getBrand()              { return brand; }
     public void   setBrand(String brand)  { this.brand = brand; }
+
 }
